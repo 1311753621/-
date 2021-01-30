@@ -19,6 +19,36 @@ const routes = [
         next("/login")
       }
     },
+    children:[
+      {
+        path:'/home',
+        redirect:"/home/index"
+      },
+      {
+        path: '/home/index',
+        component: ()=> {  // 路由懒加载
+          return import('../components/home/index.vue')
+        },
+      },
+      {
+        path: '/table/table1',
+        component: ()=> {  // 路由懒加载
+          return import('../components/table/table1.vue')
+        },
+      },
+      {
+        path: '/table/table2',
+        component: ()=> {  // 路由懒加载
+          return import('../components/table/table2.vue')
+        },
+      },
+      {
+        path: '/table/table3',
+        component: ()=> {  // 路由懒加载
+          return import('../components/table/table3.vue')
+        },
+      }
+    ]
   },
   {
     path: '/login',
