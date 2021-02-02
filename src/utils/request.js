@@ -47,10 +47,10 @@ server.interceptors.request.use((config)=>{
 server.interceptors.response.use((res)=>{
     //console.log(res)
     loading.close();
-    if(res.data.meta.status==401){
-        sessionStorage.removeItem("sg_token")
-        router.push('/')
-    }
+    // if(res.data.meta.status==401){
+    //     sessionStorage.removeItem("sg_token")
+    //     router.push('/')
+    // }
     return res
 },error=>{
     loading.close();
